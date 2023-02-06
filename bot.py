@@ -8,9 +8,9 @@ app = Client(**log, )
 
 
 @app.on_message(filters.chat(int(config.bot_id)))
-async def new_media_group(client: Client, message: Message):
+async def resend_text(client: Client, message: Message):
     mess = message.text
-    await app.send_message(config.channel, mess)
+    await app.send_message(int(config.channel), mess)
 
 
 if __name__ == '__main__':
